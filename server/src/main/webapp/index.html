@@ -1,0 +1,36 @@
+<html>
+<body>
+
+<h1>Report Server</h1>
+
+<h2>Published REST Url's </h2>
+
+<table border=1 cellpadding=5>
+<tr>
+   <th>Method</th>
+   <th>Context</th>
+   <th>Description</th>
+   <th>Mime Types</th>
+</tr>
+
+<tr>
+   <td colspan=4><h3>Report Management</h3></td>
+</tr>
+
+<tr>
+   <td>GET</td>
+   <td>/rs/report/view/{reportName}</td>
+   <td>View a HTML report from template 'reportName' </td>
+   <td>text/html</td>
+</tr>
+
+<tr>
+   <td>GET</td>
+   <td>/rs/report/view/image/{image}</td>
+   <td>Get images associated with an HTML report
+      (The exported reports refer to tzhis URL)</td>
+   <td>image/*</td>
+</tr>
+</table>
+</body>
+</html>

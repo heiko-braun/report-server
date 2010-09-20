@@ -1,0 +1,49 @@
+<html>
+<head>
+  <script language='JavaScript'>
+    // get the current URL
+    var url = window.location.toString();
+    //get the parameters
+    url.match(/\?(.+)$/);
+    var params = RegExp.$1;
+    // split up the query string and store in an
+    // associative array
+    var params = params.split("&");
+    var queryStringList = {};
+
+    for(var i=0;i<params.length;i++)
+    {
+      var tmp = params[i].split("=");
+      queryStringList[tmp[0]] = unescape(tmp[1]);
+    }
+
+    var ffw = "";
+    for(var i in queryStringList)
+    {
+      if(i == "ffw")
+      {
+        ffw = queryStringList[i];
+        break;
+      }
+    }
+
+    alert("0:"+document.location.hostname);    
+
+    alert("1:"+params);
+  </script>
+</head>
+<body>
+<br><br>
+<center>
+  <img src="loader.gif" alt="loading ..."/>
+  <h3 style="font-family:sans-serif;">Generating report, please wait...</h3>
+</center>
+<script type="text/javascript">
+  if(ffw != "")
+  {
+    //document.location.href = ffw;
+    alert("2:"+ffw);
+  }
+</script>
+</body>
+</html>
